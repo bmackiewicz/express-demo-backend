@@ -5,6 +5,9 @@ import userRouters from "./users";
 export default class Routes {
   constructor(app: Application) {
         app.use("/api/v1/users", userRouters);
+        app.get('/api/v1/status', (req, res) => {
+          res.send({ status: 'ok' });
+        });
 
   }
 }
